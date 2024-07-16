@@ -16,9 +16,13 @@ export const DashBoard = ()=>{
     },[records])
     return(
         <div className='dashboard-container'>
-            <h1>Welcome {user?.fullName}! here are your finances:</h1>
+            <h1 className='welcome'>Welcome {user?.fullName}! here are your finances:</h1>
             <FinancialRecordForm/>
-            <div>Total Savings: {calculateTotalSavings}</div>
+            <div className='totalSavings'>
+                <span className='text'>Total Savings: </span>
+                <span className='number'>&#x20B9;{calculateTotalSavings}</span>
+            </div>
+            {/* <span className='totalSavings'>Total Savings: <b>{calculateTotalSavings}</b></span> */}
             <FinancialRecordList/>
         </div>
     )

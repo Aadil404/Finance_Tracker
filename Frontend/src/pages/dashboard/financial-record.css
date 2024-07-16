@@ -1,99 +1,206 @@
 /* Centered container for the app */
 .dashboard-container {
-    width: 80%;
-  }
+  width: 90%;
+}
+
+
+/* General styling for headers within the app */
+h1,
+h2 {
+  color: #2c3e50;
+  text-align: center;
+}
+
+.dashboard-container .welcome {
+  font-size: 40px;
+}
+
+/* Form and list container */
+.form-container,
+.list-container {
+  margin-bottom: 20px;
+}
+
+/* Common class for all buttons */
+.button {
+  background-color: #598a28;
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: #71a72f;
+}
+
+
+.totalSavings{
+  margin-left: 75%;
+  margin-right: 4px;
+  font-size: larger;
+  padding: 10px 10px;
+
+}
+
+.totalSavings .text{
+  color: #3d6012;
+  font-weight: 800;
+}
+
+.totalSavings .number{
+  color: rgb(134, 134, 134);
+  font-weight: 900;
+}
+
+.button-delete {
+  background-color: #3a540d;
+  color: #ffffff;
+  border: none;
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button-delete:hover {
+  background-color: #49760e;
+}
+
+/* Common class for all input fields and selects */
+.input {
+  width: 90%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  background-color: rgb(219 222 211);
+  border: 1px solid #2b2a2a;
+  border-radius: 5px;
+  color: black;
+  font-size: medium;
+}
+
+.input option:hover {
+  background-color: antiquewhite;
+}
+
+/* Labels for better readability */
+label {
+  font-weight: 800;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.table-container {
+  margin: 20px;
+  overflow-x: auto; /* Enables horizontal scrolling if the table is too wide */
+  width: 100%;
+  max-height: 600px; 
+  overflow-y: auto; 
   
-  /* General styling for headers within the app */
-  h1,
-  h2 {
-    color: #2c3e50;
-    text-align: center;
-  }
+}
+
+/* designing scroll bar */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #536a1e; /* Thumb color */
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7cb00c; /* Thumb color on hover */
+}
+
+
+
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  /* margin-top: 20px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   
-  /* Form and list container */
-  .form-container,
-  .list-container {
-    margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd; /* Light grey border for cells */
+  text-align: left;
+  max-width: 250px;
+  word-wrap: break-word;
+}
+
+.table th {
+  background-color: #89a743; /* Darker blue header background */
+  color: white;
+  font-size: 16px;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #f4ffe4; /* Zebra striping for rows, light grey */
+}
+.table tbody tr:nth-child(even) {
+  background-color: #f5ffdb; /* Zebra striping for rows, light grey */
+}
+
+.table tbody tr:hover {
+  background-color: #daf4af; /* Light blue hover effect for rows */
+}
+
+@media screen and (max-width: 480px) {
+  .dashboard-container {
+    width: 98%;
   }
-  
-  /* Common class for all buttons */
-  .button {
-    background-color: #3498db;
-    color: #ffffff;
-    border: none;
-    padding: 8px 15px;
-    margin: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
+  .dashboard-container .welcome {
+    font-size: 30px;
   }
-  
-  .button:hover {
-    background-color: #2980b9;
-  }
-  .button-delete {
-    background-color: #343cdb;
-    color: #ffffff;
-    border: none;
-    padding: 8px 15px;
-    margin: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  .button-delete:hover {
-    background-color: #343cdb;
-  }
-  
-  /* Common class for all input fields and selects */
-  .input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    background-color: transparent;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    color: #3498db;
-  }
-  
-  /* Labels for better readability */
-  label {
-    font-weight: 600;
-    display: block;
-    margin-bottom: 5px;
-  }
-  
   .table-container {
-    margin: 20px;
-    overflow-x: auto; /* Enables horizontal scrolling if the table is too wide */
+    margin: 4px;
   }
-  
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
   .table th,
   .table td {
-    padding: 12px 15px;
-    border: 1px solid #ddd; /* Light grey border for cells */
-    text-align: left;
+    padding: 8px 10px;
+    max-width: 200px;
+  }
+
+  .button-delete {
+    padding: 4px 8px;
+    margin: 2px;
+  }
+
+  .totalSavings{
+    margin-left: 50%;
+    margin-right: 1px;
+    font-size: large;
+    padding: 10px 0px;
+  
   }
   
-  .table th {
-    background-color: #3498db; /* Darker blue header background */
-    color: white;
-    font-size: 16px;
+  .totalSavings .text{
+    color: #3d6012;
+    font-weight: 800;
   }
-  
-  .table tbody tr:nth-child(odd) {
-    background-color: #f2f2f2; /* Zebra striping for rows, light grey */
+
+  label {
+    margin-left: 8px;
   }
-  
-  .table tbody tr:hover {
-    background-color: #e8f4f8; /* Light blue hover effect for rows */
+  .input {
+    margin-left: 8px;
   }
+
+  .button {
+    margin-left: 8px;
+  }
+}

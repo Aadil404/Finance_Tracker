@@ -18,7 +18,7 @@ export const FinancialRecordForm=()=>{
 
         const newRecord = {
             userId:user?.id ?? "",   //if we are not logged in
-            date:new Date(),
+            date:new Date().toLocaleString(),
             description:description,
             amount:parseFloat(amount),
             category:category,
@@ -46,7 +46,7 @@ export const FinancialRecordForm=()=>{
                 </div>
                 <div className="form-field">
                     <label>Amount:</label>
-                    <input type="text" required className="input"  value={amount} onChange={(e)=>{setAmount(e.target.value)}}/>
+                    <input type="number" required className="input"  value={amount} onChange={(e)=>{setAmount(e.target.value)}}/>
                 </div>
                 <div className="form-field">
                     <label>Category:</label>

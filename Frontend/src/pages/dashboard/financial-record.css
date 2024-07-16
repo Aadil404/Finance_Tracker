@@ -40,8 +40,9 @@ h2 {
 
 .totalSavings{
   margin-left: 75%;
-  margin-right: 4px;
-  font-size: larger;
+  margin-right: 1px;
+  margin-bottom: 10px;
+  font-size: large;
   padding: 10px 10px;
 
 }
@@ -96,7 +97,7 @@ label {
 }
 
 .table-container {
-  margin: 20px;
+  /* margin: 20px 0; */
   overflow-x: auto; /* Enables horizontal scrolling if the table is too wide */
   width: 100%;
   max-height: 600px; 
@@ -140,6 +141,7 @@ label {
   text-align: left;
   max-width: 250px;
   word-wrap: break-word;
+  font-size: large;
 }
 
 .table th {
@@ -159,6 +161,17 @@ label {
   background-color: #daf4af; /* Light blue hover effect for rows */
 }
 
+@media screen and (max-width: 800px){
+  .totalSavings{
+    margin-left: 60%;
+    margin-right: 1px;
+    font-size: large;
+    padding: 10px 0px;
+  
+  }
+
+}
+
 @media screen and (max-width: 480px) {
   .dashboard-container {
     width: 98%;
@@ -173,6 +186,7 @@ label {
   .table td {
     padding: 8px 10px;
     max-width: 200px;
+    font-size: medium;
   }
 
   .button-delete {
@@ -181,8 +195,8 @@ label {
   }
 
   .totalSavings{
-    margin-left: 50%;
-    margin-right: 1px;
+    margin-left: 45%;
+    margin-right: 0px;
     font-size: large;
     padding: 10px 0px;
   
@@ -204,3 +218,5 @@ label {
     margin-left: 8px;
   }
 }
+
+

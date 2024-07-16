@@ -6,10 +6,11 @@ export const FinancialRecordsContext = createContext(undefined)
 export const FinancialRecordsProvider = ({children}) => {
     const [records, setRecords] = useState([])
     const {user} = useUser()
+    const url="http://localhost:3000";
 
     const fetchRecords = async() => {
         if(!user) return;
-        const response = await fetch(`http://localhost:3000/financial-records/getAllByUserID/${user.id}`);
+        const response = await fetch(`${url}/financial-records/getAllByUserID/${user.id}`);
 
         if(response.ok){
             const records= await response.json();
@@ -23,7 +24,7 @@ export const FinancialRecordsProvider = ({children}) => {
     },[user]);
 
     const addRecord = async (record) => {
-        const response = await fetch("http://localhost:3000/financial-records",{
+        const response = await fetch(`${url}/financial-records`,{
             method:"POST", 
             body: JSON.stringify(record),
             headers:{
@@ -44,7 +45,7 @@ export const FinancialRecordsProvider = ({children}) => {
 
     const updateRecord = async (id, newRecord) => {
         // console.log(id, newRecord)
-        const response = await fetch(`http://localhost:3000/financial-records/${id}`,{
+        const response = await fetch(`${url}/financial-records/${id}`,{
             method:"PUT", 
             body: JSON.stringify(newRecord),
             headers:{
@@ -69,7 +70,7 @@ export const FinancialRecordsProvider = ({children}) => {
     }
 
     const deleteRecord = async (id) => {
-        const response = await fetch(`http://localhost:3000/financial-records/${id}`,{
+        const response = await fetch(`${url}/financial-records/${id}`,{
             method:"DELETE", 
         })
 

@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { useFinancialRecords } from "../../contexts/financial-record-context";
-import { useTable } from "react-table";
+import { useTable, useSortBy } from "react-table";
 
 
 const EditableCell = ({
@@ -107,7 +107,7 @@ export const FinancialRecordList = () => {
 
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({ columns, data: records});
+    useTable({ columns, data: records},useSortBy);
 
   return (
     <div className="table-container">
@@ -118,10 +118,11 @@ export const FinancialRecordList = () => {
             return (
               <tr key={hgKey} {...hgProps}>
                 {hg.headers.map((column) => {
-                  const { key: colKey, ...colProps } = column.getHeaderProps();
+                  const { key: colKey, ...colProps } = column.getHeaderProps(column.getSortByToggleProps());
                   return (
                     <th key={colKey} {...colProps}>
                       {column.render("Header")}
+                      {column.isSorted && <span>{column.isSortedDesc ?  " ▲" : " ▼"}</span>}
                     </th>
                   );
                 })}
@@ -129,7 +130,7 @@ export const FinancialRecordList = () => {
             );
           })}
         </thead>
-
+          
         <tbody {...getTableBodyProps()}>
           {rows.map((row, idx) => {
             prepareRow(row);

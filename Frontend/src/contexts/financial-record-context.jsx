@@ -6,7 +6,7 @@ export const FinancialRecordsContext = createContext(undefined)
 export const FinancialRecordsProvider = ({children}) => {
     const [records, setRecords] = useState([])
     const {user} = useUser()
-    const url= "http://localhost:3000";
+    const url="https://finance-tracker-backend-7f5d.onrender.com";
 
     const fetchRecords = async() => {
         if(!user) return;

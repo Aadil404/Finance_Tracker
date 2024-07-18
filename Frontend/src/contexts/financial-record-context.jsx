@@ -6,7 +6,7 @@ export const FinancialRecordsContext = createContext(undefined)
 export const FinancialRecordsProvider = ({children}) => {
     const [records, setRecords] = useState([])
     const {user} = useUser()
-    const url="http://localhost:3000";
+    const url= "http://localhost:3000";
 
     const fetchRecords = async() => {
         if(!user) return;
@@ -70,6 +70,8 @@ export const FinancialRecordsProvider = ({children}) => {
     }
 
     const deleteRecord = async (id) => {
+        const flag = confirm("do you really want to delete this record");
+        if(!flag) return;
         const response = await fetch(`${url}/financial-records/${id}`,{
             method:"DELETE", 
         })

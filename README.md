@@ -71,14 +71,14 @@ This project is a **Personal Finance Tracker** that allows users to store, organ
 
       ```bash
       cd Backend
-      npm start
+      npm run dev
       ```
 
     - **Start the Frontend server**
 
       ```bash
       cd ../Frontend
-      npm start
+      npm run dev
       ```
 6. **Access the app:**
 
